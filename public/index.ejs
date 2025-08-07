@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot</title>
+    <link rel="stylesheet"  href="./style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+
+<body>
+    <div class="container " >
+       <div class="navbar" >
+        <button class="icon-button sdbr" title="Sidebar">
+            <i  data-lucide="sidebar" ></i>
+        </button>
+        <button class="icon-button srch" title="Search">
+            <i data-lucide="search"></i>
+        </button>
+        <button class="icon-button nwct" title="New Chat">
+            <i data-lucide="message-square-plus"></i>
+        </button>
+        <button class="icon-button stgs" title="Settings">
+            <i data-lucide="settings"></i>
+        </button>
+       </div> 
+       <div class="title">
+        <h1>What can I help with?</h1>
+       </div>
+       <div class="form">
+        <form action=""  method="post">        <input class="input1"type="text"  
+            name="user_input" placeholder="Ask me anything with in Ethiopia" required  >
+        </div>
+        </form> 
+       </div>
+    </div>
+    <div class="container2">
+        <div class="nav">
+            <div class="icon">
+                <div class="btn1"><button class="icon-button" title="Sidebar">
+                <i data-lucide="sidebar" ></i></div>
+                     </button> 
+                <div class="para">Side bar</div>
+            </div>
+            
+             <div class="icon">
+               <div class="btn2"><button class="icon-button" title="Sidebar">
+                <i data-lucide="search" ></i></div>
+                     </button> 
+                <div class="para">Search</div>
+            </div>
+
+             <div class="icon">
+               <div class="btn3"><button class="icon-button" title="New Chat">
+                <i data-lucide="message-square-plus"></i></div>
+                     </button> 
+                <div class="para">New Chat</div>
+            </div>
+
+             <div class="icon">
+                <div class="btn4"><button class="icon-button" title="New Chat">
+                <i data-lucide="settings"></i></div>
+                     </button> 
+                <div class="para">Settings</div>
+            </div>
+            
+            <div class="searchChats">
+            <div class="search">
+                <input class="input2" type="text" placeholder="Search Chats" id="searchInput">
+                
+            </div>
+        </div>
+        </div>
+        
+        <div class="chat-history">
+            
+            <ul  class="chats"><span id="chats">Chats</span>
+                <li id="first" class="speci">Questions on school age</li>
+                <li class="speci">Questions on climate change and rain</li>
+                <li class="speci">Questions on technology and education control</li>
+                <li class="speci">Questions on climate change and rain</li>
+                <li class="speci">Questions on technology and education control</li>
+                <li class="speci">Questions on climate change and rain</li>
+                <li class="speci">Questions on technology and education control</li>
+                <li class="speci">Questions on climate change and rain</li>
+                <li class="speci">Questions on technology and education control</li>
+                <li class="speci">Questions on climate change and rain</li>
+                <li class="speci">Questions on technology and education control</li>
+            </ul>
+
+        </div>
+         <div class="settings-list">
+            <ul class="lists">
+                <li class="stngs">Change language</li>
+                <li class="stngs">Change Model</li>
+                <li class="stngs">Logout</li>
+            </ul>
+         </div>
+
+        <div class="icon profile">
+                <div class="btn">
+                    <button class="icon-button" title="user">
+                        <i class="he" data-lucide="user" ></i>
+                    </button> 
+                </div>
+                     
+                <div class="para">Honelign Yohannes</div>
+        </div>
+    </div>
+  <script src="./app.js"></script>
+ <script > 
+    lucide.createIcons();
+ </script>   
+</body>
+</html>
