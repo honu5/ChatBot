@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 import {getGeminiResponse} from "../utils/geminiWrapper.js"
 
 let ans=[];
-let list=[];
+let topics=[];
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -25,26 +25,37 @@ app.get("/", (req, res) => {
     res.render("home");
 });
 
-app.get("/home",(req,res)=>{
-
-    res.render("home")
-})
 
 
 app.post("/other",async(req,res)=>{
     const message=req.body.user_input;
     const response=await getGeminiResponse(message);  
-      
-ans.push({message,response})
+    ans=[]
+if (! topics.includes(message)) {
+        topics.push(message.slice(0,30));
+    }
+    console.log(topics)
+    ans.push({message,response})
 
-    res.render("other", { ans});})
+    res.render("other", { ans,topics});
+})
 
 app.post("/chat", async (req, res) => {
     const message = req.body.user_input;
     const response = await getGeminiResponse(message);
     ans.push({message,response})
     
-    res.render("other", { ans});
+    res.render("other", { ans,topics});
+})
+
+app.get("/home",(req,res)=>{
+
+    res.render("home",{topics})
+})
+
+ 
+app.get('/profile',(req,res)=>{
+    res.render("profile.ejs")
 })
 
 app.listen(port,()=>{

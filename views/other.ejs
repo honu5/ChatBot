@@ -81,21 +81,14 @@
         </div>
         </div>
         
-        <div class="chat-history">
-            
-            <ul  class="chats"><span id="chats">Chats</span>
-                <li id="first" class="speci">Questions on school age</li>
-                <li onclick="window.location.href='/other'" class="speci">Questions on climate change and rain</li>
-                <li class="speci">Questions on technology and education control</li>
-                <li class="speci">Questions on climate change and rain</li>
-                <li class="speci">Questions on technology and education control</li>
-                <li class="speci">Questions on climate change and rain</li>
-                <li class="speci">Questions on technology and education control</li>
-                <li class="speci">Questions on climate change and rain</li>
-                <li class="speci">Questions on technology and education control</li>
-                <li class="speci">Questions on climate change and rain</li>
-                <li class="speci">Questions on technology and education control</li>
-            </ul>
+<div class="chat-history">
+    <ul class="chats"><span id="chats">Chats</span>
+        <% topics.forEach((topic, index) => { %>
+            <li class="speci" onclick="window.location.href='/other'"><%= topic %></li>
+        <% }) %>
+    </ul>
+
+
 
         </div>
          <div class="settings-list">
@@ -108,7 +101,7 @@
 
         <div class="icon profile">
                 <div class="btn">
-                    <button class="icon-button" title="user">
+                     <button onclick="window.location.href='profile'" class="icon-button" title="user">
                         <i class="he" data-lucide="user" ></i>
                     </button> 
                 </div>
