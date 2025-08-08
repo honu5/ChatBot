@@ -285,6 +285,27 @@ height:7vw;
   border-top-right-radius: 0;
 }
 
+.chat-bubble.response strong, 
+.chat-bubble.response b {
+  font-weight: 700;
+}
+
+.chat-bubble.response ol,
+.chat-bubble.response ul {
+  margin-left: 20px;
+  padding-left: 15px;
+}
+
+.chat-bubble.response li {
+  margin-bottom: 5px;
+}
+
+.chat-bubble.response p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+
 
 
 

@@ -29,18 +29,21 @@
           <div class="chat-bubble message"><%= ans[i].message %></div>
         </div>
         <div class="chat-row bot-response">
-          <div class="chat-bubble response"><%= ans[i].response %></div>
+          <div class="chat-bubble response"><%- ans[i].response %></div>
         </div>
       <% } %>
     </div>
 
     
     <div class="form">
-      <form action="/chat" method="post">
-        <input style="margin-top: 10%;" class="input1" autocomplete="off" autocorrect="off"  type="text" name="user_input" placeholder="Ask me anything within Ethiopia" required>
-        <button class="btns" type="submit"><i data-lucide="arrow-up"></i></button>
-      </form>
-    </div>
+  <form action="/chat" method="post">
+    <!-- Add hidden input to hold topicId -->
+    <input type="hidden" name="topic_id" value="<%= topicId %>">
+    <input style="margin-top: 10%;" class="input1" autocomplete="off" autocorrect="off" 
+           type="text" name="user_input" placeholder="Ask me anything within Ethiopia" required>
+    <button class="btns" type="submit"><i data-lucide="arrow-up"></i></button>
+  </form>
+</div>
 
    
     <div class="container2">
@@ -84,7 +87,11 @@
 <div class="chat-history">
     <ul class="chats"><span id="chats">Chats</span>
         <% topics.forEach((topic, index) => { %>
-            <li class="speci" onclick="window.location.href='/other'"><%= topic %></li>
+<button id="<%= topic.id %>" style="background-color: black; color:white ; border-radius: 7%;">
+  <li class="speci" onclick="window.location.href='/chat/<%= topic.id %>'">
+    <%= topic.title %>
+  </li>
+</button>
         <% }) %>
     </ul>
 

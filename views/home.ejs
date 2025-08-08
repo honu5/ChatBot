@@ -99,13 +99,7 @@
 
     </div> <!-- end .nav -->
 
-    <div class="chat-history">
-      <ul class="chats"><span id="chats">Chats</span>
-        <% topics.forEach((topic, index) => { %>
-            <li class="speci" onclick="window.location.href='/other'"><%= topic %></li>
-        <% }) %>
-    </ul>
-    </div>
+    
 
     <div class="settings-list">
       <ul class="lists">
@@ -115,13 +109,38 @@
       </ul>
     </div>
 
-    <div class="icon profile">
-      <div class="btn">
-        <button onclick="window.location.href='profile'" class="icon-button" title="user">
-          <i class="he" data-lucide="user"></i>
-        </button>
-      </div>
-      <div class="para">Honelign Yohannes</div>
+    <div class="chat-history">
+    <ul class="chats"><span id="chats">Chats</span>
+        <% topics.forEach((topic, index) => { %>
+<button id="<%= topic.id %>" style="background-color: black; color:white ; border-radius: 7%;">
+  <li class="speci" onclick="window.location.href='/chat/<%= topic.id %>'">
+    <%= topic.title %>
+  </li>
+</button>
+        <% }) %>
+    </ul>
+
+
+
+        </div>
+         <div class="settings-list">
+            <ul class="lists">
+                <li class="stngs">Change language</li>
+                <li class="stngs">Change Model</li>
+                <li class="stngs">Logout</li>
+            </ul>
+         </div>
+
+        <div class="icon profile">
+                <div class="btn">
+                     <button onclick="window.location.href='profile'" class="icon-button" title="user">
+                        <i class="he" data-lucide="user" ></i>
+                    </button> 
+                </div>
+                     
+                <div class="para">Honelign Yohannes</div>
+        </div>
+      
     </div>
   </div>
 
