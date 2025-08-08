@@ -17,6 +17,8 @@
         <button onclick="window.location.href='/home'" class="icon-button nwct" title="New Chat"><i data-lucide="message-square-plus"></i></button>
         <button class="icon-button stgs" title="Settings"><i data-lucide="settings"></i></button>
       </div>
+
+      
       <div class="welcome-text">
         <h1>Welcome to ChatBot</h1>
       </div>
@@ -37,12 +39,11 @@
     
     <div class="form">
   <form action="/chat" method="post">
-    <!-- Add hidden input to hold topicId -->
-    <input type="hidden" name="topic_id" value="<%= topicId %>">
-    <input style="margin-top: 10%;" class="input1" autocomplete="off" autocorrect="off" 
-           type="text" name="user_input" placeholder="Ask me anything within Ethiopia" required>
-    <button class="btns" type="submit"><i data-lucide="arrow-up"></i></button>
-  </form>
+  <input type="hidden" name="topic_id" value="<%= topicId %>" />
+  <input style="margin-top: 10%;" class="input1" autocomplete="off" autocorrect="off" type="text" name="user_input" placeholder="Ask me anything within Ethiopia" required>
+  <button class="btns" type="submit"><i data-lucide="arrow-up"></i></button>
+   </form>
+
 </div>
 
    
@@ -118,6 +119,9 @@
       
     </div>
   </div>
+  <footer class="footer">
+    <p> Developed By Liranso</p>
+  </footer>
 
   <script>
   window.addEventListener('load', function () {

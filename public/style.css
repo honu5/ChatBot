@@ -1,8 +1,18 @@
 body{
     background-color: black;
     color: white;
-    font-size: larger;
+    display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  
 }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 
 
 
@@ -305,6 +315,20 @@ height:7vw;
   line-height: 1.5;
 }
 
+.footer {
+  background-color: blue;
+  font-size: large;
+  color: white;
+  width: 100vw;
+  text-align: center;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container0 {      
+  flex: 1;        
+}
 
 
 

@@ -8,7 +8,7 @@ import { marked } from "marked";
 
 let ans = [];
 let topics = [];
-let conversations = {}; // { topicId: [{message, response}, ...] }
+let conversations = {}; 
 
 let id = 0;
 const __filename = fileURLToPath(import.meta.url);
@@ -43,9 +43,15 @@ app.post("/other", async (req, res) => {
 
   conversations[topicObj.id].push({ message, response });
 
-  // Pass topicId when rendering other.ejs to fix NaN issue
-  res.render("other", { ans: conversations[topicObj.id], topics, topicId: topicObj.id });
+  res.redirect(`/other/${topicObj.id}`);
 });
+
+app.get("/other/:id", (req, res) => {
+  const topicId = parseInt(req.params.id);
+  res.render("other", { ans: conversations[topicId] || [], topics, topicId });
+});
+
+
 
 app.post("/chat", async (req, res) => {
   const message = req.body.user_input;
